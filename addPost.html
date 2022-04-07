@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>張貼動態</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+    <div class="container-md">
+      <a class="navbar-brand" href="index.html">MetaWall</a>
+      <a class="navbar-link d-flex text-decoration-none link-dark" href="#">
+        <img class="rounded-circle avatar object-fit-cover border-dark me-2" src="https://images.unsplash.com/photo-1648410775749-2a737a312218?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" alt="penguin"/><span class="user-name border-bottom border-dark border-2">Member</span>
+      </a>
+    </div>
+  </nav>
+  <div class="container add-posts">
+    <div class="row mt-5">
+      <div class="col-lg-8">
+        <h2 class="title py-3 text-center bg-white fs-5 mb-3">
+          張貼動態
+        </h2>
+        <form class="border border-dark rounded bg-white p-4 border-2">
+          <div class="mb-3">
+            <label for="content" class="form-label">貼文內容</label>
+            <textarea name="content" id="content" class="post-content form-control border-dark border-2" placeholder="輸入您的貼文內容"></textarea>
+            <p class="alert-text">請輸入貼文內容！</p>
+          </div>
+          
+          <button type="button" class="btn btn-dark mb-3">上傳圖片</button>
+          
+          <input type="text" class="post-img form-control border-dark border-2 mb-3" placeholder="請輸入圖片位址，如：https://example.jpg">
+          <p class="alert-text">圖片位址需為 <code>https://</code> ！</p>
+
+          <div class="col-6 mx-auto">
+            <button type="button" class="submit-post btn mb-3 py-3 w-100 border border-dark border-2">送出貼文</button>
+          </div>
+          
+        </form>
+      </div>
+      <div class="col-lg-4">
+        <div class="bg-white p-4 sidebar border border-2 border-dark position-relative">
+          <a href="addPost.html" class="add-post-btn link-white btn btn-secondary w-100 mb-3 py-2">
+            張貼動態
+          </a>
+          <a class="text-decoration-none link-dark d-flex align-items-center mb-3" href="#">
+            <img class="avatar rounded-circle object-fit-cover me-2" src="https://images.unsplash.com/photo-1649119947831-f096bcf4ee64?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDMzfDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" alt="avatar"/>
+            <h3 class="fs-6 mb-0">邊緣小杰</h3></a>
+            <a class="text-decoration-none link-dark d-flex mb-3 align-items-center" href="#">
+            <div class="icon rounded-circle bi bi-people border border-secondary fs-3 avatar text-center me-2"></div>
+            <h3 class="fs-6 mb-0">追蹤名單</h3></a>
+            <a class="text-decoration-none link-dark d-flex mb-3 align-items-center" href="#">
+              <div class="icon rounded-circle bi bi-hand-thumbs-up border border-secondary fs-3 avatar text-center me-2"></div>
+              <h3 class="fs-6 mb-0">我按讚的文章</h3>
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./javascripts/addPost.js"></script>
+</body>
+</html>
