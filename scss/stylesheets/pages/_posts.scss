@@ -1,0 +1,18 @@
+.posts-list {
+  .card {
+    border: 2px solid $dark;
+    box-shadow: 0 3px 0 0;
+  }
+  .avatar {
+    height: 45px;
+    width: 45px;
+  }
+}
+.post {
+  &-img {
+    height: 500px;
+    border: 2px solid $dark;
+    border-radius: 0.5rem;
+    object-position: top;
+  }
+}
