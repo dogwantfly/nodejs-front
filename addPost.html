@@ -23,19 +23,25 @@
           張貼動態
         </h2>
         <form class="border border-dark rounded bg-white p-4 border-2">
+          <p class="mb-3 text-danger">* 必填</p>
           <div class="mb-3">
-            <label for="content" class="form-label">貼文內容</label>
+            <label for="content" class="form-label">
+              貼文內容
+              <span class="text-danger">
+                *
+              </span>
+            </label>
             <textarea name="content" id="content" class="post-content form-control border-dark border-2" placeholder="輸入您的貼文內容"></textarea>
             <p class="alert-text">請輸入貼文內容！</p>
           </div>
           
           <button type="button" class="btn btn-dark mb-3">上傳圖片</button>
           
-          <input type="text" class="post-img form-control border-dark border-2 mb-3" placeholder="請輸入圖片位址，如：https://example.jpg">
+          <input type="text" class="post-image form-control border-dark border-2 mb-3" placeholder="請輸入圖片位址，如：https://example.jpg">
           <p class="alert-text">圖片位址需為 <code>https://</code> ！</p>
 
           <div class="col-6 mx-auto">
-            <button type="button" class="submit-post btn mb-3 py-3 w-100 border border-dark border-2">送出貼文</button>
+            <button type="submit" class="submit-post btn mb-3 py-3 w-100 border border-dark border-2">送出貼文</button>
           </div>
           
         </form>
@@ -45,16 +51,26 @@
           <a href="addPost.html" class="add-post-btn link-white btn btn-primary w-100 mb-3 py-2">
             張貼動態
           </a>
-          <a class="text-decoration-none link-dark d-flex align-items-center mb-3" href="#">
-            <img class="avatar rounded-circle object-fit-cover me-2" src="./img/user@2x.png" alt="avatar"/>
-            <h3 class="fs-6 mb-0">邊緣小杰</h3></a>
-            <a class="text-decoration-none link-dark d-flex mb-3 align-items-center" href="#">
-            <div class="icon rounded-circle bi bi-people fs-3 avatar text-center me-3"></div>
-            <h3 class="fs-6 mb-0">追蹤名單</h3></a>
-            <a class="text-decoration-none link-dark d-flex mb-3 align-items-center" href="#">
-              <div class="icon rounded-circle bi bi-hand-thumbs-up fs-3 avatar text-center me-3"></div>
-              <h3 class="fs-6 mb-0">我按讚的文章</h3>
-            </a>
+          <ul class="list-unstyled ps-0">
+            <li>
+              <a class="text-decoration-none link-dark d-flex align-items-center mb-3" href="#">
+                <img class="user avatar rounded-circle object-fit-cover me-3" src="./img/user@2x.png" alt="avatar"/>
+                <h3 class="fs-6 mb-0">邊緣小杰</h3>
+              </a>
+            </li>
+            <li>
+              <a class="text-decoration-none link-dark d-flex mb-3 align-items-center" href="#">
+                <div class="icon rounded-circle bi bi-people fs-3 avatar text-center me-3"></div>
+                <h3 class="fs-6 mb-0">追蹤名單</h3>
+              </a>
+            </li>
+            <li>
+              <a class="text-decoration-none link-dark d-flex mb-3 align-items-center" href="#">
+                  <div class="icon rounded-circle bi bi-hand-thumbs-up fs-3 avatar text-center me-3"></div>
+                  <h3 class="fs-6 mb-0">我按讚的文章</h3>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

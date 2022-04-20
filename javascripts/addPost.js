@@ -1,17 +1,18 @@
 const submitBtn = document.querySelector('.submit-post');
-function submitPost() {
-  const content = document.querySelector('.post-content').value;
-  const img = document.querySelector('.post-img').value;
+const content = document.querySelector('.post-content')
+submitBtn.disabled = true;
+function submitPost(e) {
+  e.preventDefault();
+  const img = document.querySelector('.post-image').value;
   console.log(content);
   let obj = {};
-  if (!content) {
+  if (!content.value) {
     const alertText = document.querySelector('.post-content').nextElementSibling;
     alertText.style.display = 'block';
   } else if (img && !img.startsWith('https')) {
     const alertText = document.querySelector('.post-img').nextElementSibling;
     alertText.classList.add('d-block');
   } else {
-    
     obj = { 
       content,
       user: "624db34461939813513ce238",
@@ -27,7 +28,7 @@ function submitPost() {
     .then(function (response) {
       console.log(response);
       document.querySelector('.post-content').value = '';
-      document.querySelector('.post-img').value = '';
+      document.querySelector('.post-image').value = '';
       document.querySelectorAll('.alert-text').forEach(item => {
         item.classList.remove('d-block');
       })
@@ -39,4 +40,12 @@ function submitPost() {
   }
   
 }
+function validateContent() {
+  if(!content.value) {
+    submitBtn.disabled = true;
+  } else {
+    submitBtn.disabled = false;
+  }
+}
 submitBtn.addEventListener("click", submitPost);
+content.addEventListener("input", validateContent);

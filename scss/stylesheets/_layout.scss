@@ -12,10 +12,18 @@
     background-color: #E2EDFA;
     color: $primary;
     border: 2px solid $primary;
-    &:hover {
-      color: $cyan;
-      background-color: $primary;
-      border: 2px solid $cyan;
+  }
+  li a {
+    &:hover{
+      background-color: $light;
+      .icon {
+        color: $cyan;
+        background-color: $primary;
+        border: 2px solid $cyan;
+      }
+      .user {
+        transform: scale(1.125);
+      }
     }
   }
 }
@@ -33,4 +41,8 @@ body {
 }
 .add-post-btn {
   box-shadow: -0.125rem 0.125rem 0 0.25rem $dark;
+  &:active, &:focus , &:active:focus{
+    box-shadow: -0.2rem 0.1rem 0 0.25rem $dark;
+    
+  }
 }
