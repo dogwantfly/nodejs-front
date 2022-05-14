@@ -5,15 +5,17 @@ const searchText = document.querySelector('.search-text');
 let timeSort = '';
 let query = '';
 function getPostsList(query, timeSort) {
+  const token = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, '$1');
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
   let url = '';
   if (timeSort && query) {
-    url = `https://obscure-basin-73103.herokuapp.com/posts?timeSort=${timeSort}&q=${query}`;
+    url = `https://quiet-dawn-95060.herokuapp.com/posts?timeSort=${timeSort}&q=${query}`;
   } else if (timeSort) {
-    url = `https://obscure-basin-73103.herokuapp.com/posts?timeSort=${timeSort}`;
+    url = `https://quiet-dawn-95060.herokuapp.com/posts?timeSort=${timeSort}`;
   } else if (query) {
-    url = `https://obscure-basin-73103.herokuapp.com/posts?q=${query}`;
+    url = `https://quiet-dawn-95060.herokuapp.com/posts?q=${query}`;
   } else {
-    url = `https://obscure-basin-73103.herokuapp.com/posts`
+    url = `https://quiet-dawn-95060.herokuapp.com/posts`
   }
   axios.get(url)
     .then(function (response) {
@@ -27,7 +29,7 @@ function getPostsList(query, timeSort) {
 
 function renderData(data) {
   let str = '';
-  console.log(data);
+  
   if (data.length) {
     
     data.forEach((item) => {
@@ -95,7 +97,7 @@ function sortPosts(e) {
       timeSort = '';
       break;
   }
-  console.log(query);
+  
   getPostsList(query, timeSort);
 }
 function searchPosts() {
@@ -103,36 +105,6 @@ function searchPosts() {
   if (!query) return;
   getPostsList(query, timeSort);
 }
-// function updatePosts(e) {
-//   let likes = 0;
-//   if (e.target.classList.contains('bi-hand-thumbs-up')) {
-//     likes = Number(e.target.dataset.likes) + 1;
-//   } else {
-//     likes = Number(e.target.dataset.likes) - 1;
-//   }
-//   const content = e.target.closest('.card-body').querySelector('.post-content').textContent;
-//   const user = e.target.closest('.card').querySelector('h3').dataset.user;
-//   const type = e.target.closest('.card-body').dataset.type;
-//   const tags = e.target.closest('.card-body').querySelector('.post-tags').dataset.tags.split(',');
-//   const postId = e.target.closest('.card').dataset.id;
-//   let isLiked = false;
-//   obj = { 
-//     content,
-//     user,
-//     type,
-//     tags,
-//     likes
-//   };
-//   console.log(obj);
-//   const url = `https://obscure-basin-73103.herokuapp.com/posts/${postId}`;
-//   axios.patch(url, obj)
-//   .then(function (response) {
-//     console.log(response);
-//     isLiked = !isLiked;
-//   }).catch ((error) => {
-//     console.error(error);
-//   })
-// }
+
 sortSelect.addEventListener('change', sortPosts);
 searchBtn.addEventListener('click', searchPosts);
-// postsList.addEventListener('click', updatePosts);

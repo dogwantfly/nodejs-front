@@ -1,0 +1,11 @@
+.nav-tabs {
+  .nav-link {
+    background-color: $white;
+    border: 2px solid $dark;
+    color: $dark;
+    &:hover {
+      background-color: $dark;
+      color: $white;
+    }
+  }
+}

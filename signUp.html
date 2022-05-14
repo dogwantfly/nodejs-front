@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>註冊</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="min-vh-100 d-flex align-items-center">
+    <div class="container">
+      <div class="row mt-5">
+        <div class="board col-lg-8 mx-auto border border-dark border-2 bg-background px-5">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <img src="./img/login-img.svg" alt="login image" class="img-fluid">
+            </div>
+            <div class="col-lg-6">
+              <h1 class="board-title text-primary text-center">
+                MetaWall
+              </h1>
+              <h2 class="fs-4 mb-5 text-center">註冊</h2>
+              <form>
+                <div class="mb-3">
+                  <input type="text" class="form-control" id="nickname" aria-describedby="emailHelp" placeholder="暱稱">
+                  <p class="alert-text d-none text-danger">
+                  
+                  </p>
+                </div>
+                
+                <div class="mb-3">
+                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
+                  <p class="alert-text d-none text-danger">
+                  
+                  </p>
+                </div>
+                
+                <div class="mb-3">
+                  <input type="password" class="form-control" id="password" placeholder="Password">
+                  <p class="alert-text d-none text-danger">
+                  
+                  </p>
+                </div>
+                
+                <div class="mb-5">
+                  <input type="password" class="form-control" id="comfirmPassword" placeholder="comfirm Password">
+                  <p class="alert-text d-none text-danger">
+                  
+                  </p>
+                </div>
+                
+                <button type="submit" class="btn btn-primary w-100 submit-login py-3" disabled>註冊</button>
+                <a href="login.html" class="btn w-100 link-dark py-3">登入</a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+  <script src="./javascripts/signUp.js"></script>
+</body>
+</html>

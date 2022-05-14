@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>個人資料</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+    <div class="container-md">
+      <a class="navbar-brand" href="index.html">MetaWall</a>
+      <div class="navbar-item position-relative text-nowrap" href="#">
+        <a href="#" class="navbar-link d-flex text-decoration-none link-dark py-2 px-4 position-relative text-nowrap">
+          <img class="rounded-circle avatar object-fit-cover border-dark me-2" src="https://images.unsplash.com/photo-1648410775749-2a737a312218?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" alt="penguin"/>
+          <span class="user-name border-bottom border-dark border-2">Member</span>
+        </a>
+       
+        <ul class="list-group list-unstyled ps-0 border-dark text-center">
+          <li aria-current="true">
+            <a href="index.html" class="list-group-item list-group-item-action active border-bottom-0">
+              我的貼文牆
+            </a>
+          </li>
+          <li>
+            <a href="profile.html" class="list-group-item list-group-item-action border-bottom-0">
+              修改個人資料
+            </a>
+          </li>
+          <li>
+            <a href="login.html" class="list-group-item list-group-item-action">
+              登出
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container add-posts">
+    <div class="row mt-5">
+      <div class="col-lg-8">
+        <h1 class="title py-3 text-center bg-white fs-5 mb-5">
+          修改個人資料
+        </h1>
+        <nav>
+          <div class="nav nav-tabs ps-3" id="nav-tab" role="tablist">
+            <button class="nav-link active border-bottom-0" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="true">暱稱修改</button>
+            <button class="nav-link border-bottom-0" id="nav-password-tab" data-bs-toggle="tab" data-bs-target="#nav-password" type="button" role="tab" aria-controls="nav-password" aria-selected="false">重設密碼</button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <form class="border border-dark rounded bg-white p-4 border-2">
+              <div class="col-lg-8 mx-auto py-4">
+                <img src="./img/user_default@2x.png" alt="default user image" class="d-block mx-auto mb-3">
+                <button type="button" class="btn btn-dark rounded-0 d-block mx-auto">上傳大頭照</button>
+                <p class="mb-3 text-danger">* 必填</p>
+                <div class="mb-3">
+                  <label for="nickname" class="form-label">暱稱<span class="text-danger ms-2">*</span></label>
+                  <input type="text" class="form-control" id="nickname" aria-describedby="nickname" placeholder="暱稱">
+                  <p class="alert-text d-none text-danger">
+                  
+                  </p>
+                </div>
+                <div class="mb-4">
+                  <label for="gender" class="form-label d-block">性別<span class="text-danger ms-2">*</span></label>
+                  <div class="form-check d-inline-block me-3">
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                    <label class="form-check-label" for="male">
+                      男性
+                    </label>
+                  </div>
+                  <div class="form-check d-inline-block me-3">
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                    <label class="form-check-label" for="female">
+                      女性
+                    </label>
+                  </div>
+                </div>
+                
+                <div class="col-12">
+                  <button type="submit" class="submit-profile btn btn-primary mb-3 py-3 w-100 border border-dark border-2" disabled>送出更新</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="tab-pane fade" id="nav-password" role="tabpanel" aria-labelledby="nav-password-tab">
+            <form class="border border-dark rounded bg-white p-4 border-2">
+              <div class="col-lg-8 mx-auto py-4">
+               
+                <p class="mb-3 text-danger">* 必填</p>
+                <div class="mb-3">
+                  <label for="newPassword" class="form-label">輸入新密碼<span class="text-danger ms-2">*</span></label>
+                  <input type="password" class="form-control" id="newPassword" aria-describedby="newPassword" placeholder="輸入新密碼">
+                  <p class="alert-text d-none text-danger">
+                  
+                  </p>
+                </div>
+                <div class="mb-4">
+                  <label for="comfirmPassword" class="form-label">再次輸入<span class="text-danger ms-2">*</span></label>
+                  <input type="password" class="form-control" id="comfirmPassword" aria-describedby="comfirmPassword" placeholder="再次輸入新密碼">
+                  <p class="alert-text d-none text-danger">
+                  
+                  </p>
+                </div>
+                
+                <div class="col-12">
+                  <button type="submit" class="submit-password btn btn-primary mb-3 py-3 w-100 border border-dark border-2" disabled>重設密碼</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-lg-4">
+        <div class="bg-white p-4 sidebar border border-2 border-dark position-relative">
+          <a href="addPost.html" class="add-post-btn link-white btn btn-primary w-100 mb-3 py-2">
+            張貼動態
+          </a>
+          <ul class="list-unstyled ps-0">
+            <li>
+              <a class="text-decoration-none link-dark d-flex align-items-center mb-3" href="#">
+                <img class="user avatar rounded-circle object-fit-cover me-3" src="./img/user@2x.png" alt="avatar"/>
+                <h3 class="fs-6 mb-0">邊緣小杰</h3>
+              </a>
+            </li>
+            <li>
+              <a class="text-decoration-none link-dark d-flex mb-3 align-items-center" href="#">
+                <div class="icon rounded-circle bi bi-people fs-3 avatar text-center me-3"></div>
+                <h3 class="fs-6 mb-0">追蹤名單</h3>
+              </a>
+            </li>
+            <li>
+              <a class="text-decoration-none link-dark d-flex mb-3 align-items-center" href="#">
+                  <div class="icon rounded-circle bi bi-hand-thumbs-up fs-3 avatar text-center me-3"></div>
+                  <h3 class="fs-6 mb-0">我按讚的文章</h3>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="./javascripts/profile.js"></script>
+</body>
+</html>

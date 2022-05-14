@@ -1,10 +1,12 @@
 const submitBtn = document.querySelector('.submit-post');
-const content = document.querySelector('.post-content')
+const content = document.querySelector('.post-content');
 submitBtn.disabled = true;
 function submitPost(e) {
   e.preventDefault();
+  const token = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, '$1');
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
   const img = document.querySelector('.post-image').value;
-  console.log(content);
+  
   let obj = {};
   if (!content.value) {
     const alertText = document.querySelector('.post-content').nextElementSibling;
@@ -14,7 +16,7 @@ function submitPost(e) {
     alertText.classList.add('d-block');
   } else {
     obj = { 
-      content,
+      content: content.value,
       user: "624db34461939813513ce238",
       type: "person",
       tags: ["感情"]
@@ -22,11 +24,11 @@ function submitPost(e) {
     if (img && img.startsWith('https')) {
       obj.image = img;
     }
-    console.log(obj);
-    const url = 'https://obscure-basin-73103.herokuapp.com/posts';
+    
+    const url = 'https://quiet-dawn-95060.herokuapp.com/posts';
     axios.post(url, obj)
     .then(function (response) {
-      console.log(response);
+      
       document.querySelector('.post-content').value = '';
       document.querySelector('.post-image').value = '';
       document.querySelectorAll('.alert-text').forEach(item => {
