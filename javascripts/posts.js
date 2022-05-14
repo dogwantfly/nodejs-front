@@ -6,6 +6,9 @@ let timeSort = '';
 let query = '';
 function getPostsList(query, timeSort) {
   const token = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, '$1');
+  if (!token) {
+    window.location = 'login.html';
+  }
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
   let url = '';
   if (timeSort && query) {
@@ -22,7 +25,9 @@ function getPostsList(query, timeSort) {
       renderData(response.data.data);
     })
     .catch(function (error) {
-      console.log(error);
+      if (error.response.status >= 400 && error.response.status <= 500) {
+        window.location = 'login.html';
+      }
     })
 }
 
